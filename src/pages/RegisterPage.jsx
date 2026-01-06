@@ -28,7 +28,7 @@ export default function RegisterPage() {
     password: "",
     },
     validate : validate,
-    onSubmit: (values) => { register(values); navigate("/dashboard");
+    onSubmit: (values) => { register(values); navigate("/login");
     },
   });
 
@@ -111,7 +111,8 @@ export default function RegisterPage() {
 
             <button 
             className="btn btn-primary login-signup-btn" 
-            type="submit">
+            type="submit"
+            >
               Create account
             </button>
           </form>
