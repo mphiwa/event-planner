@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useFormik } from "formik";
 import { SessionState } from "../sharedstate/SessionState";
 import { EventState } from "../sharedstate/EventState";
@@ -28,25 +28,30 @@ function validate(values) {
 }
 
 export default function EventPage() {
-
+  const location = useLocation();
+  const eventToEdit = location.state ? location.state.eventToEdit : null;
   const navigate = useNavigate();
   const { loggedIn } = useContext(SessionState);
-  const { addEvent } = useContext(EventState);
+  const { addEvent, updateEvent } = useContext(EventState);
 
   useEffect(() => {if (!loggedIn) {navigate("/login");}
   }, [loggedIn, navigate]);
 
   const formik = useFormik({
     initialValues: {
-    name: "",
-    date: "",
-    time: "",
-    location: "",
-    description: "",
+    name: eventToEdit ? eventToEdit.name : "",
+    date: eventToEdit ? eventToEdit.date : "",
+    time: eventToEdit ? eventToEdit.time : "",
+    location: eventToEdit ? eventToEdit.location : "",
+    description: eventToEdit ? eventToEdit.description : "",
     },
     validate : validate,
     onSubmit: (values) => {
+      if (eventToEdit) {
+      updateEvent(eventToEdit.id, values);
+      } else {
       addEvent(values);
+      }
       navigate("/dashboard");
     },
   });
@@ -57,7 +62,7 @@ export default function EventPage() {
          <div className="page-container">
           <div className="login-signup-Card card">
             <div className="card-body login-signup-card-body">
-            <h1 className="page-heading">Add Event</h1>
+            <h1 className="page-heading">{eventToEdit ? "Edit Event" : "Add Event"}</h1>
             <form className="login-signup-form" onSubmit={formik.handleSubmit}>
               <div className="field-block">
                 <label htmlFor="name" className="form-label">Event title</label>
