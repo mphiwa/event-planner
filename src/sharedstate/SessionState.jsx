@@ -7,7 +7,7 @@ export function SessionStore({ children }) {
   //Stores the currently saved/active user object (in-memory).
   const [activeUser, setActiveUser] = useState(null);
   //is the person logged in right now?
-  const [LoggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   //save the user details and marks the user as logged in.
   function register(userInfo) {
     setActiveUser(userInfo);
@@ -37,7 +37,7 @@ export function SessionStore({ children }) {
   //group of data and functions that other components can access through the context.
   const value = {
     activeUser,
-    LoggedIn,
+    loggedIn,
     register,
     login,
     logout,
