@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { SessionStore } from "./sharedstate/SessionState";
+import { EventStore } from "./sharedstate/EventState";
 import "./index.css";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+  <SessionStore>
+      <EventStore>
+        <RouterProvider router={router} />
+      </EventStore>
+    </SessionStore>
   </StrictMode>
 );
