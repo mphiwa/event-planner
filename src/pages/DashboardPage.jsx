@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { SessionState } from "../sharedstate/SessionState";
+import EventList from "../components/EventList";
 import NavBar from "../routes/NavBar";
 
 export default function DashboardPage() {
@@ -12,9 +13,12 @@ export default function DashboardPage() {
 
   return (
      <div>
-       <div className="page-container">
        <NavBar />
-       < h1 className="page-heading">Dashboard</h1>
+       <div className="page-container">
+       <div className="container">
+        <h1 className="page-heading">Dashboard</h1>
+        <EventList/>
+       </div>
      </div>
   </div>
   );
