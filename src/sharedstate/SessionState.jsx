@@ -8,10 +8,11 @@ export function SessionStore({ children }) {
   const [activeUser, setActiveUser] = useState(null);
   //is the person logged in right now?
   const [loggedIn, setLoggedIn] = useState(false);
+
   //save the user details and marks the user as logged in.
   function register(userInfo) {
     setActiveUser(userInfo);
-    setLoggedIn(true);
+    setLoggedIn(false);
   }
   //It checks entered username and password info against activeUser stored info.
   function login(username, password) {
