@@ -11,16 +11,17 @@ export default function EventList() {
 
   // show a friendly message if there are no events
   if (events.length === 0) {
-    return <p> Sorry no events yet. Click Add Event to create one.</p>;
+    return <p className="mt-3"> Sorry no events yet. Click Add Event to create one.</p>;
   }
 
   return (
-    // Bootstrap grid wrapper for cards
-    <div className="row">
+    <div className="mt-3">
+      <div className="row">
       {/* loop through events and show an EventCard for each item */}
       {events.map((event) => (
         <EventCard key={event.id} event={event} />
       ))}
+      </div>
     </div>
   );
 }

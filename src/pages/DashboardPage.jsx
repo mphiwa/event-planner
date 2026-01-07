@@ -15,7 +15,7 @@ export default function DashboardPage() {
      <div>
        <NavBar />
        <div className="page-container">
-       <div className="container">
+       <div className="wide-wrap">
         <h1 className="page-heading">Dashboard</h1>
         <EventList/>
        </div>

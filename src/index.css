@@ -1,14 +1,20 @@
 .page-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 2rem 1rem;
+  width: 100% ;
+  padding: 5rem 1rem 2rem;
+}
+
+.center-wrap {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.wide-wrap {
+  max-width: 1150px;
+  margin: 0 auto;
 }
 
 .page-heading {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  z-index: 101;
+  margin: 0 0 1rem;
 }
 
 .login-signup-form .field-block {
@@ -47,6 +53,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* wrap on smaller screens */
+  gap: 0.5rem;
 }
 
 .brand-name {
@@ -60,6 +68,7 @@
   margin: 0;
   padding: 0;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .navBar-link {
@@ -75,13 +84,18 @@
   border: none;
   background: teal;
   color: #ffffff;
-  padding: 0.6rem;
+  padding: 0.4rem 0.7rem;
   border-radius: 80px;
 }
-/* Push content below fixed navbar */
-.page-container {
-  padding-top: 2rem;
+
+.eventAddBtn {
+  border: none;
+  background: rgb(85, 215, 255);
+  color: #ffffff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 80px;
 }
+
 .helpPage-card {
   background-color: #1e1e1e;
   color: white;

@@ -25,7 +25,7 @@ export default function EventCard({ event }) {
 
   return (
     // use Bootstrap columns so cards align in a grid layout
-    <div className="col-md-4 mb-4">
+    <div className="col-12 col-md-6 col-lg-4 mb-4">
       {/* make card take full height so all cards align evenly */}
       <Card className="h-100">
         <Card.Body>

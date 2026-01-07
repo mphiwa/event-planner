@@ -23,7 +23,7 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <Link className="navBar-link" to="/event">
+            <Link className="navBar-link eventAddBtn" to="/event">
               Add Event
             </Link>
           </li>
