@@ -27,7 +27,7 @@ export default function EventCard({ event }) {
     // use Bootstrap columns so cards align in a grid layout
     <div className="col-12 col-md-6 col-lg-4 mb-4">
       {/* make card take full height so all cards align evenly */}
-      <Card className="h-100">
+      <Card className="h-100 indCard">
         <Card.Body>
           <Card.Title>{event.name}</Card.Title>
           {/* show event details */}

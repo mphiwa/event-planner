@@ -21,6 +21,11 @@
   margin-bottom: 1rem;
 }
 
+.login-signup-Card {
+  background-color: lightblue;
+  color: black;
+}
+
 .error-message {
   margin-top: 0.4rem;
   color: #b00020;
@@ -94,6 +99,11 @@
   color: #ffffff;
   padding: 0.4rem 0.7rem;
   border-radius: 80px;
+}
+
+.indCard {
+  background-color: rgb(157, 243, 234);
+  color: rgb(0, 0, 0);
 }
 
 .helpPage-card {
