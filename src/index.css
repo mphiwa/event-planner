@@ -77,9 +77,17 @@
   color: #ffffff;
   padding: 0.6rem;
   border-radius: 80px;
-
+}
 /* Push content below fixed navbar */
 .page-container {
-  padding-top: 9rem;
+  padding-top: 2rem;
 }
+.helpPage-card {
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+}
+
+.helpPage-card .card-title {
+  margin-bottom: 1rem;
 }
